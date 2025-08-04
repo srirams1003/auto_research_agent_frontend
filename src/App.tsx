@@ -5,6 +5,27 @@ import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [query, setQuery] = useState("")
+  const [result, setResult] = useState("")
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setResult("")
+    try {
+      const res = await fetch("http://localhost:8000/research", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      })
+      const data = await res.json()
+      setResult(data.result)
+    } catch (err) {
+      setResult("Error fetching result.")
+    }
+    setLoading(false)
+  }
 
   return (
     <>
@@ -25,6 +46,24 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+      <form onSubmit={handleSubmit} style={{ marginTop: "2rem" }}>
+        <input
+          type="text"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          placeholder="Enter your research question"
+          style={{ width: "300px", marginRight: "1rem" }}
+        />
+        <button type="submit" disabled={loading || !query}>
+          {loading ? "Searching..." : "Submit"}
+        </button>
+      </form>
+      {result && (
+        <div style={{ marginTop: "1rem" }}>
+          <h3>Result:</h3>
+          <p>{result}</p>
+        </div>
+      )}
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
