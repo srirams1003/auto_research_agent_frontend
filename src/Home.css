@@ -1,0 +1,46 @@
+/* src/Home.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Papyrus, Fantasy;
+    background-color: #2f2f2f;
+    height: 100%;
+}
+ 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.main-title {
+    font-size: 5rem;
+    color: #5032b2;
+    margin: 0;
+    filter: drop-shadow(0 0 1em #8605f7aa)
+}
+.sub-text {
+    font-size: 1.5rem;
+    color: #666;
+    margin: 20px 0;
+    max-width: 600px;
+}
+.action-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.action-button:hover {
+    background-color: #0056b3;
+}
