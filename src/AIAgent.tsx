@@ -42,6 +42,17 @@ const AIAgent = () => {
           Ask Any Questions and get answers from the latest research papers
         </p>
       </div>
+      
+      {/* Loading Animation */}
+      {loading && (
+        <div className="loading-container">
+          <div className="mini-logo-container">
+            <img src={reactLogo} className="mini-logo" alt="React logo" />
+          </div>
+          <p className="fetching-text">Fetching your result...</p>
+        </div>
+      )}
+      
       {result && (
         <div style={{ marginTop: "1rem", backgroundColor: "gray", padding: "10px", borderRadius: "10px" }}>
           <h3 style={{ color: "rgb(4, 0, 128)" }}>Result:</h3>
