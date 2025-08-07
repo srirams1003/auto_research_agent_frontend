@@ -1,0 +1,66 @@
+.title-text {
+    color: rgb(90, 0, 128);
+    font-size: 6rem;
+    font-weight: bold;
+    filter: drop-shadow(0 0 1em #8605f7aa);
+  }
+  
+  .flowchart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Spacing between items and arrows */
+    margin: 0rem 0;
+  }
+  
+  .flowchart-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .image-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(90, 0, 128);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flowchart-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the circular container */
+    background-color: #ffffff;
+  }
+  
+  .image-description {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  .arrow {
+    width: 50px;
+    height: 5px;
+    background-color: rgb(90, 0, 128);
+    position: relative;
+  }
+  
+  .arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid rgb(90, 0, 128);
+    transform: translateY(-50%);
+  }
