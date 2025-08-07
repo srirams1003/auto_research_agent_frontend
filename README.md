@@ -4,4 +4,5 @@ Instructions:
    ```
 2. ```bash
    npm run dev
-   ``` and follow link
+   ```
+   And then follow link
